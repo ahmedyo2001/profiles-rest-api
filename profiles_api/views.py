@@ -1,6 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework import viewsets
 from profiles_api import serializers
 
 
@@ -48,4 +49,15 @@ class BadBad (APIView):
         ]
 
         return Response({'message':'Hello','an_apiview':an_apiview})
+
+
+
+
+class HelloViewSet(viewsets.ViewSet):
+    """ Test API Viewset"""
+
+    def list(self, request):
+        a_viewset=["uses actions 7agat kteer",
+        "auto maps to urls" ]
+        return Response({'message':'Hello!', 'a_viewset':a_viewset})
 
